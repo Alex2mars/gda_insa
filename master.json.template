@@ -1,0 +1,59 @@
+{
+  "services": {
+    "postgres": {
+      "host": "db001.gda-score.org",
+      "port": 5432,
+      "type": "postgres"
+    }
+  },
+  "datasources": {
+    "friendlyName": "Data Sources",
+    "{datasource_name}": {
+      "friendlyName": "Datasource name",
+      "tables": {
+        "table1": { "uid": "uid" },
+        "table2": { "uid": "uid" },
+        "table3": { "uid": "uid" },
+      },
+      "databases": [ //Exemples de databases pour une source
+        "raw_{nom_source}", // <====== OBLIGATOIRE
+        "raw_{nom_source}_link",     //Exemple si besoin d'un base servant de lien
+        "raw_{nom_source}_link_pub",  //Exemple si besoin d'un base servant de lien et publique
+        "pseudo_{nom_source}",   //Exemple si pseudonymisée
+        "k_anon_2_{nom_source}", //Exemple si base en k-2
+        "k_anon_5_{nom_source}"  //Exemple si base en k-3
+      ]
+    },
+    
+  },
+  "anonClasses": { //Toutes les techniques utilisées pour les bases anonymisées, ici on a juste juste du k-2 anonymat dans les bases
+    "friendlyName": "Anonymization Classes",
+    "k_anonymization": { // (la sous-partie naive est juste là pour imiter le master.json de base, on peut prendre la forme que l'on veut)
+      "friendlyName": "K-anonymization",
+      "naive": {
+        "friendlyName": "Naive Configuration",
+        "implementation": "ARX",
+        "k_2": {
+          "friendlyName": "K = 2",
+          "service": "postgres",
+          "databases" : [
+            "k_anon_2_{nom_source}",
+          ]
+        },
+      }
+    },
+    "no_anon": { //IMPORTANT : Bien renseigner la base en brute dans cette partie
+      "friendlyName": "No Anonymization",
+      "service": "postgres",
+      "databases": [
+        "raw_{nom_source}",
+      ],
+      "linkDatabases": [ //Optionnel
+        "raw_{nom_source}_link",
+      ],
+      "pubDatabases": [ //Optionnel
+        "raw_{nom_source}_link_pub",
+      ]
+    },
+  }
+}
