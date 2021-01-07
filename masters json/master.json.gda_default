@@ -1,8 +1,8 @@
 {
   "services": {
     "postgres": {
-      "host": "2.10.56.17",
-      "port": 20002,
+      "host": "db001.gda-score.org",
+      "port": 5432,
       "type": "postgres"
     },
     "aircloak": {
