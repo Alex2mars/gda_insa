@@ -1,0 +1,45 @@
+Voilà un exemple de source de donnée, avec le master.json associé.
+
+Notre source de donnée se basera sur une base de gestion de voitures, qu'on aura anonymisé par de la pseudonymisation et du k_2 anonymat.
+Seule la table client aura des besoins en anonymisation
+
+Source : voitures
+Tables : 
+- constructors
+- models
+- motors
+- clients
+
+
+Bases de données :
+- raw_voitures 		--> Contiendra les 4 tables
+- k_anon_2_voitures	--> Contient la table client k-2 anonymisée
+- pseudo_voitures	--> Contient la table client pseudo anonymisée
+
+Dans une attaque, vu comment le master.json.voitures est construit, nous pouvons utiliser les configs suivantes :
+
+Pour une attaque sur la base pseudonymisée :
+config = {
+    "configVersion": "compact1",
+    "basic": {
+        "attackType": "Test Attack",
+        "criteria": "singlingOut"
+    },
+    'anonTypes': [
+        ["pseudonymisation"]
+    ],
+    'tables': [ ['voitures','clients'] ]
+}
+
+Pour une attaque sur la base k-2 anonymisée :
+config = {
+    "configVersion": "compact1",
+    "basic": {
+        "attackType": "Test Attack",
+        "criteria": "singlingOut"
+    },
+    'anonTypes': [
+        ["k_anonymisation", "k_2"]
+    ],
+    'tables': [ ['voitures','clients'] ]
+}

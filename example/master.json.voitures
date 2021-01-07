@@ -1,0 +1,54 @@
+{
+  "services": {
+    "postgres": {
+      "host": "db001.gda-score.org",
+      "port": 5432,
+      "type": "postgres"
+    }
+  },
+  "datasources": {
+    "friendlyName": "Data Sources",
+    "voitures": {
+      "friendlyName": "Voitures",
+      "tables": {
+        "constructors": { "uid": "uid" },
+        "models": { "uid": "uid" },
+        "motors": { "uid": "uid" },
+        "clients": { "uid": "uid" },
+      },
+      "databases": [
+        "raw_voitures",
+        "pseudo_voitures",  
+        "k_anon_2_voitures"
+      ]
+    },
+    
+  },
+  "anonClasses": {
+    "friendlyName": "Anonymization Classes",
+    "k_anonymization": { 
+      "friendlyName": "K-anonymization",
+      "k_2": {
+        "friendlyName": "K = 2",
+        "service": "postgres",
+        "databases" : [
+          "k_anon_2_voitures",
+        ]
+      },
+    },
+    "pseudonymisation": { 
+      "friendlyName": "Pseudonymization",
+      "service": "postgres",
+      "databases" : [
+        "k_anon_2_voitures",
+      ]
+    },
+    "no_anon": { 
+      "friendlyName": "No Anonymization",
+      "service": "postgres",
+      "databases": [
+        "raw_voitures",
+      ],
+    },
+  }
+}
