@@ -1,8 +1,8 @@
 {
   "services": {
     "postgres": {
-      "host": "db001.gda-score.org",
-      "port": 5432,
+      "host": "sds5000.insa-cvl.fr",
+      "port": 3700,
       "type": "postgres"
     }
   },
