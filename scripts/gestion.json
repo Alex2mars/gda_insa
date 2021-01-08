@@ -1,0 +1,4 @@
+{
+	"action": "create_db", 
+	"db_name":"mydb"
+}

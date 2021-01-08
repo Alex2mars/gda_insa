@@ -1,0 +1,7 @@
+{
+	"host":"127.0.0.1",
+	"server_port":5432,
+	"username":"antoine",
+	"password":"devpass",
+	"path_to_master":"master.json"
+}

@@ -1,0 +1,5 @@
+{
+	"action": "populate",
+	"db_name": "truc",
+	"data_to_import":{"persons":"samples/persons.csv", "books":"samples/books.csv"}
+}

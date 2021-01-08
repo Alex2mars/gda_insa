@@ -1,0 +1,5 @@
+{
+	"action": "delete",
+	"db_name": "truc",
+	"tables": ["persons", "books"]
+}

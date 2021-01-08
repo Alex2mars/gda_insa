@@ -1,0 +1,5 @@
+{
+	"action": "create",
+	"db_name": "truc",
+	"tables_to_create":"samples/create_table.sql"
+}
