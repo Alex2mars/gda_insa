@@ -1,7 +1,7 @@
 {
-	"host":"127.0.0.1",
-	"server_port":5432,
-	"username":"antoine",
-	"password":"devpass",
+	"host":"sds5000.insa-cvl.fr",
+	"server_port":3700,
+	"username":"user (envoyé au chef de groupe)",
+	"password":"pass (envoyé au chef de groupe)",
 	"path_to_master":"master.json"
 }
