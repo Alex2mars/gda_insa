@@ -21,8 +21,7 @@
         "pseudo_voitures",  
         "k_anon_2_voitures"
       ]
-    },
-    
+    }
   },
   "anonClasses": {
     "friendlyName": "Anonymization Classes",
@@ -49,6 +48,6 @@
       "databases": [
         "raw_voitures",
       ],
-    },
+    }
   }
 }

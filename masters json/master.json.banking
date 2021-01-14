@@ -33,10 +33,11 @@
   "anonClasses": {
     "friendlyName": "Anonymization Classes",
     "diff_privacy": {
+      "friendlyName": "Differential Privacy",
       "alphabeta_dp": {
         "friendlyName": "Alpha Beta Differential Privacy",
         "implementation": "NIPS Paper",
-        "a_2/3__b_2": {
+        "a_2_3__b_2": {
           "friendlyName": "alpha = 2/3, beta = 2*alpha*m/n",
           "service": "postgres",
           "databases" : [
@@ -54,7 +55,7 @@
             "ldp_banking"
           ]
         }
-      },
+      }
     },
     "no_anon": {
       "friendlyName": "No Anonymization",
