@@ -43,7 +43,18 @@
             "alphabeta_banking"
           ]
         }
-      }
+      },
+	  "ldp": {
+        "friendlyName": "Local Differential Privacy",
+        "implementation": "Staircase",
+        "_": {
+          "friendlyName": "_",
+          "service": "postgres",
+          "databases" : [
+            "ldp_banking"
+          ]
+        }
+      },
     },
     "no_anon": {
       "friendlyName": "No Anonymization",
