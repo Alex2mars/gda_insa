@@ -1,0 +1,56 @@
+{
+  "services": {
+    "postgres": {
+      "host": "sds5000.insa-cvl.fr",
+      "port": 3700,
+      "type": "postgres"
+    }
+  },
+  "datasources": {
+    "friendlyName": "Data Sources",
+    "banking": {
+      "friendlyName": "Czech Banking",
+      "tables": {
+        "accounts": { "uid": "uid" },
+        "cards": { "uid": "uid" },
+        "clients": { "uid": "uid" },
+        "disp": { "uid": "uid" },
+        "loans": { "uid": "uid" },
+        "orders": { "uid": "uid" },
+        "transactions": { "uid": "uid" },
+        "transcopy": { "uid": "uid" },
+        "transcopy1": { "uid": "uid" },
+        "transcopy2": { "uid": "uid" },
+        "syn_accounts": { "uid": "uid" },
+        "syn_transactions_dfsym": { "uid": "uid" }
+      },
+      "databases": [
+        "raw_banking",
+        "alphabeta_banking"
+      ]
+    }
+  },
+  "anonClasses": {
+    "friendlyName": "Anonymization Classes",
+    "diff_privacy": {
+      "alphabeta_dp": {
+        "friendlyName": "Alpha Beta Differential Privacy",
+        "implementation": "NIPS Paper",
+        "a_2/3__b_2": {
+          "friendlyName": "alpha = 2/3, beta = 2*alpha*m/n",
+          "service": "postgres",
+          "databases" : [
+            "alphabeta_banking"
+          ]
+        }
+      }
+    },
+    "no_anon": {
+      "friendlyName": "No Anonymization",
+      "service": "postgres",
+      "databases": [
+        "raw_banking"
+      ]
+	}
+  }
+}
