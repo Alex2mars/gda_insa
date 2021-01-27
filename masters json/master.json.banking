@@ -27,7 +27,7 @@
       "databases": [
         "raw_banking",
         "alphabeta_banking",
-		"alphabeta_2_banking"
+	"alphabeta_2_banking"
       ]
     }
   },
@@ -45,7 +45,7 @@
             "alphabeta_banking"
           ]
         },
-		"a_2_3__b_2__w_relations": {
+	"a_2_3__b_2__w_relations": {
           "friendlyName": "alpha = 2/3, beta = 2*alpha*m/n, with user-defined domains and relation constraints",
           "service": "postgres",
           "databases" : [
@@ -53,7 +53,7 @@
           ]
         }
       },
-	  "ldp": {
+      "ldp": {
         "friendlyName": "Local Differential Privacy",
         "implementation": "Staircase",
         "_": {
